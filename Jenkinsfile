@@ -8,20 +8,20 @@ pipeline {
                 echo ================================
                 echo Setting up Python environment...
                 echo ================================
-
+                
                 REM Add Python and Scripts to PATH
-                set PATH=%PATH%;C:\\Users\\kaviy\\AppData\\Local\\Programs\\Python\\Python313;C:\\Users\\kaviy\\AppData\\Local\\Programs\\Python\\Python313\\Scripts
-
+                set PATH=C:\\Users\\kaviy\\AppData\\Local\\Programs\\Python\\Python313;C:\\Users\\kaviy\\AppData\\Local\\Programs\\Python\\Python313\\Scripts;%PATH%
+                
                 REM Check Python version
                 python --version
 
-                REM Install pip if missing
+                REM Ensure pip is installed
                 python -m ensurepip --upgrade
 
                 REM Upgrade pip
                 python -m pip install --upgrade pip
 
-                REM Install dependencies from requirements.txt
+                REM Install dependencies if requirements.txt exists
                 if exist requirements.txt (
                     python -m pip install -r requirements.txt
                 ) else (
@@ -37,8 +37,13 @@ pipeline {
                 echo ================================
                 echo Running Python tests...
                 echo ================================
-                REM Discover and run all unittest tests
-                python -m unittest discover -s tests -p "*.py" || echo "No tests found or tests failed"
+                
+                REM Run tests only if the 'tests' folder exists
+                if exist tests (
+                    python -m unittest discover -s tests -p "*.py"
+                ) else (
+                    echo "No tests folder found, skipping tests"
+                )
                 '''
             }
         }
@@ -49,22 +54,19 @@ pipeline {
                 echo ================================
                 echo Deploying application...
                 echo ================================
+                
                 REM Add your deployment commands here
-                echo "Deploy step placeholder"
                 '''
             }
         }
     }
 
     post {
-        always {
-            echo "Pipeline finished. Check above logs for details."
-        }
         success {
-            echo "✅ Pipeline succeeded!"
+            echo "✅ Pipeline completed successfully!"
         }
         failure {
-            echo "❌ Pipeline failed!"
+            echo "❌ Pipeline failed! Check logs above for details."
         }
     }
 }
