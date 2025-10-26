@@ -1,0 +1,53 @@
+c2025-10-26T06:07:37.664217675Z   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-10-26T06:07:37.803191313Z Collecting scipy>=1.8.0 (from scikit-learn->-r requirements.txt (line 4))
+2025-10-26T06:07:37.812869279Z   Downloading scipy-1.16.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+2025-10-26T06:07:37.869944664Z Collecting joblib>=1.2.0 (from scikit-learn->-r requirements.txt (line 4))
+2025-10-26T06:07:37.878465255Z   Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+2025-10-26T06:07:37.901986016Z Collecting threadpoolctl>=3.1.0 (from scikit-learn->-r requirements.txt (line 4))
+2025-10-26T06:07:37.91158747Z   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+2025-10-26T06:07:37.949933246Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 2))
+2025-10-26T06:07:37.958476318Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-10-26T06:07:37.981958958Z Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+2025-10-26T06:07:38.000331719Z Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.3 MB)
+2025-10-26T06:07:38.095373042Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 138.6 MB/s eta 0:00:00
+2025-10-26T06:07:38.104815833Z Downloading numpy-2.3.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+2025-10-26T06:07:38.220000034Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 147.9 MB/s eta 0:00:00
+2025-10-26T06:07:38.234060834Z Downloading scikit_learn-1.7.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.4 MB)
+2025-10-26T06:07:38.364287205Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 72.4 MB/s eta 0:00:00
+2025-10-26T06:07:38.373236986Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-10-26T06:07:38.387018739Z Downloading click-8.3.0-py3-none-any.whl (107 kB)
+2025-10-26T06:07:38.401009867Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-10-26T06:07:38.414067715Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-10-26T06:07:38.428058043Z Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+2025-10-26T06:07:38.4434735Z Downloading markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2025-10-26T06:07:38.457513459Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-10-26T06:07:38.472802035Z Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-10-26T06:07:38.49092601Z Downloading scipy-1.16.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.7 MB)
+2025-10-26T06:07:38.749346331Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.7/35.7 MB 139.1 MB/s eta 0:00:00
+2025-10-26T06:07:38.758976795Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-10-26T06:07:38.773596277Z Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+2025-10-26T06:07:38.787296858Z Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+2025-10-26T06:07:38.803085494Z Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+2025-10-26T06:07:39.023064856Z Installing collected packages: pytz, tzdata, threadpoolctl, six, numpy, markupsafe, joblib, itsdangerous, click, blinker, werkzeug, scipy, python-dateutil, jinja2, scikit-learn, pandas, flask
+2025-10-26T06:07:53.908165374Z 
+2025-10-26T06:07:53.910705968Z Successfully installed blinker-1.9.0 click-8.3.0 flask-3.1.2 itsdangerous-2.2.0 jinja2-3.1.6 joblib-1.5.2 markupsafe-3.0.3 numpy-2.3.4 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2025.2 scikit-learn-1.7.2 scipy-1.16.2 six-1.17.0 threadpoolctl-3.6.0 tzdata-2025.2 werkzeug-3.1.3
+2025-10-26T06:07:54.008901368Z 
+2025-10-26T06:07:54.008921869Z [notice] A new release of pip is available: 25.1.1 -> 25.3
+2025-10-26T06:07:54.008926449Z [notice] To update, run: pip install --upgrade pip
+2025-10-26T06:07:58.60503362Z ==> Uploading build...
+2025-10-26T06:08:19.171382688Z ==> Uploaded in 16.4s. Compression took 4.2s
+2025-10-26T06:08:19.268538676Z ==> Build successful 🎉
+2025-10-26T06:08:20.808013576Z ==> Deploying...
+2025-10-26T06:08:53.191616878Z ==> Running 'python app.py'
+2025-10-26T06:08:56.876771391Z  * Serving Flask app 'app'
+2025-10-26T06:08:56.876801594Z  * Debug mode: on
+2025-10-26T06:08:56.991338076Z WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-10-26T06:08:56.991377889Z  * Running on http://127.0.0.1:5000
+2025-10-26T06:08:56.99138498Z Press CTRL+C to quit
+2025-10-26T06:08:56.992025644Z  * Restarting with stat
+2025-10-26T06:08:58.488894365Z  * Debugger is active!
+2025-10-26T06:08:58.537955216Z  * Debugger PIN: 987-318-481
+2025-10-26T06:08:58.596952159Z 127.0.0.1 - - [26/Oct/2025 06:08:58] "HEAD / HTTP/1.1" 200 -
+2025-10-26T06:09:23.685071169Z ==> No open ports detected on 0.0.0.0, continuing to scan...
+2025-10-26T06:09:23.842694551Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-10-26T06:09:58.752246349Z Deploy finished
