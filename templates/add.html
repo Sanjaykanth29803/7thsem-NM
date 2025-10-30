@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Vaccination Record</title>
+    <title>Vaccine Schedule</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Add Vaccination Record</h1>
-
-        <form method="POST">
-            <label>Child Name:</label>
-            <input type="text" name="name" required>
-
-            <label>Age:</label>
-            <input type="number" name="age" min="0" required>
-
-            <label>Vaccine:</label>
-            <input type="text" name="vaccine" required>
-
-            <button type="submit" class="btn">Save</button>
-            <a href="{{ url_for('index') }}" class="btn-back">Back</a>
-        </form>
-    </div>
+<div class="container">
+    <h1>📅 Vaccine Schedule</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Age</th>
+            <th>Recommended Vaccines</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in schedule %}
+        <tr>
+            <td>{{ row.age }}</td>
+            <td>{{ row.vaccine }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn-back">← Back</a>
+</div>
 </body>
 </html>
