@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Vaccination Record</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Vaccination Records</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Add Vaccination Record</h1>
-
-        <form method="POST">
-            <label>Name:</label>
-            <input type="text" name="name" required>
-
-            <label>Age:</label>
-            <input type="number" name="age" required>
-
-            <label>Vaccine:</label>
-            <input type="text" name="vaccine" required>
-
-            <label>Date:</label>
-            <input type="date" name="date" required>
-
-            <button type="submit" class="btn">Add Record</button>
-        </form>
-
-        <a href="{{ url_for('index') }}" class="btn">Back to Records</a>
-    </div>
+    <h1>Vaccination List</h1>
+    <a href="{{ url_for('add') }}">Add New Record</a>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Vaccine</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
