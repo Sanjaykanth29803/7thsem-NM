@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f9d8e4, #e8a3d1);
+  text-align: center;
+  color: #333;
+}
+
+h1 { margin-top: 20px; }
+
+.form input, .form button {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background: #f3b1d1;
+}
+button {
+  background: #d36cb3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #b35797;
+}
