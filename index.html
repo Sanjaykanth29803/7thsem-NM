@@ -1,49 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vaccination Records</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vaccination Record</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Vaccination Records</h1>
-    
-    <form action="{{ url_for('add') }}" method="POST" class="form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="number" name="age" placeholder="Age" required>
-        <input type="text" name="vaccine" placeholder="Vaccine Name" required>
-        <input type="date" name="date" required>
-        <button type="submit">Add Record</button>
-    </form>
+    <div class="container">
+        <h1>Add Vaccination Record</h1>
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <div class="flash">
-          {% for message in messages %}
-            <p>{{ message }}</p>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
+        <form method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Vaccine</th>
-            <th>Date</th>
-            <th>Action</th>
-        </tr>
-        {% for row in data %}
-        <tr>
-            <td>{{ row['id'] }}</td>
-            <td>{{ row['name'] }}</td>
-            <td>{{ row['age'] }}</td>
-            <td>{{ row['vaccine'] }}</td>
-            <td>{{ row['date'] }}</td>
-            <td><a href="{{ url_for('delete', id=row['id']) }}">Delete</a></td>
-        </tr>
-        {% endfor %}
-    </table>
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>Vaccine:</label>
+            <input type="text" name="vaccine" required>
+
+            <label>Date:</label>
+            <input type="date" name="date" required>
+
+            <button type="submit" class="btn">Add Record</button>
+        </form>
+
+        <a href="{{ url_for('index') }}" class="btn">Back to Records</a>
+    </div>
 </body>
 </html>
