@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaccination Home</title>
+    <title>Child Vaccination Records</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<div class="container">
-    <h1>💉 Vaccination Management</h1>
+    <div class="container">
+        <h1>🧒 Child Vaccination Records</h1>
 
-    <a href="{{ url_for('add') }}" class="btn">+ Add Child</a>
-    <a href="{{ url_for('vaccine_schedule') }}" class="btn">📅 Vaccine Schedule</a>
+        <a href="{{ url_for('add') }}" class="btn">➕ Add Child</a>
+        <a href="{{ url_for('vaccine_schedule') }}" class="btn">📅 Vaccine Schedule</a>
 
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>DOB</th>
-            <th>Phone</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for row in data %}
-        <tr>
-            <td>{{ row['id'] }}</td>
-            <td>{{ row['name'] }}</td>
-            <td>{{ row['dob'] }}</td>
-            <td>{{ row['phone'] }}</td>
-        </tr>
+        {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Child Name</th>
+                    <th>Date of Birth</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for child in data %}
+                <tr>
+                    <td>{{ child.id }}</td>
+                    <td>{{ child.name }}</td>
+                    <td>{{ child.dob }}</td>
+                    <td>{{ child.phone }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {% else %}
-        <tr><td colspan="4" class="empty">No records found</td></tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+        <p>No child records found.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
