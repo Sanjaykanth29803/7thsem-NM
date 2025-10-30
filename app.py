@@ -1,10 +1,27 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
+import os
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 DB_PATH = 'vaccination.db'
 
-# Home route
+# 🔹 Automatically create database and table if not present
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS vaccination (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            age INTEGER,
+            vaccine TEXT
+        );
+    ''')
+    conn.close()
+
+# Run database setup at app startup
+init_db()
+
+# 🔹 Home route
 @app.route('/')
 def index():
     conn = sqlite3.connect(DB_PATH)
@@ -12,7 +29,7 @@ def index():
     conn.close()
     return render_template('index.html', data=data)
 
-# Add new record
+# 🔹 Add new record
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
@@ -27,4 +44,5 @@ def add():
     return render_template('add.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # host='0.0.0.0' allows Render to access the app
+    app.run(host='0.0.0.0', port=10000, debug=True)
